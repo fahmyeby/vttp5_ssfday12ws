@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Result Page</title>
+    </head>
+    <body>
+        <div align="center">
+            <h1>Generate Random Numbers</h1>
+            <p>Here are your generated numbers:</p>
+            <div align="center">
+                <!-- Iterate over randomNumbers -->
+                <div th:each="number : ${randomNumbers}">
+                    <p>Number: <span th:text="${number}"></span></p>
+                    <!-- Use the number to generate the image path -->
+                    <img th:src="@{'/number' + ${number} + '.jpg'}" alt="Number Image">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
